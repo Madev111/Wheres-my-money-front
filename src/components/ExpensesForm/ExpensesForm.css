@@ -1,0 +1,12 @@
+.expenses_form {
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.expenses_form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

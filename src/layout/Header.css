@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: #045d90;
+    font-size: 15px;
+    color: white;
+}
+
+header .btn_container {
+    display: flex;
+    width: 17%;
+    margin-right: 10px;
+    justify-content: space-between;
+}
+
+header .btn_container button {
+    border: none;
+    background: #babeba;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 1px 35px;
+    border-radius: 2px;
+    text-decoration: none;
+}
