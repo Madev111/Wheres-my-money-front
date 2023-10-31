@@ -8,7 +8,6 @@ import './ExpensesForm.css';
 
 export const ExpensesForm = ()=> {
 
-    // const [selected, setSelected] = useState<string>('');
     const [categories, setCategories] = useState<string[] | [] >([]);
     const [form, setForm] = useState<ExpensesEntity>({
         name: '',

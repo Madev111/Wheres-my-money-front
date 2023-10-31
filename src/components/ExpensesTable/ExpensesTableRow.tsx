@@ -10,8 +10,8 @@ export const ExpensesTableRow = (props: Props)=> {
         <tr>
             <td>{props.expense.name}</td>
             <td>{(props.expense.date).toString()}</td>
-            <td>{props.expense.category}</td>
-            <td>{props.expense.price} PLN.</td>
+            <td>{(props.expense.category).toLowerCase()}</td>
+            <td>{props.expense.price} PLN</td>
         </tr>
 
     )}
