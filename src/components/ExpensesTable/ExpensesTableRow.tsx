@@ -11,7 +11,7 @@ export const ExpensesTableRow = (props: Props)=> {
             <td>{props.expense.name}</td>
             <td>{(props.expense.date).toString()}</td>
             <td>{props.expense.category}</td>
-            <td>{props.expense.price}</td>
+            <td>{props.expense.price} PLN.</td>
         </tr>
 
     )}
