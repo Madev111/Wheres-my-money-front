@@ -1,5 +1,5 @@
 import React, {FormEvent, useEffect, useState} from "react";
-import {ExpensesEntity} from 'types'
+import {CategoryEntity, ExpensesEntity} from 'types'
 
 
 
@@ -8,7 +8,7 @@ import './ExpensesForm.css';
 
 export const ExpensesForm = ()=> {
 
-    const [categories, setCategories] = useState<string[] | [] >([]);
+    const [categories, setCategories] = useState<CategoryEntity[]| [] >([]);
     const [form, setForm] = useState<ExpensesEntity>({
         name: '',
         date: new Date(),
@@ -18,8 +18,9 @@ export const ExpensesForm = ()=> {
     const downloadCategories = async ()=> {
 
         const res = await fetch('http://localhost:3001/categories/search');
-        const data = await res.json();
-        setCategories(data);
+        const {categoriesList} = await res.json();
+        setCategories(categoriesList);
+        console.log(categoriesList);
     }
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
@@ -76,9 +77,9 @@ export const ExpensesForm = ()=> {
                         categories.map(
                             category => (
                                 <option
-                                    key={category}
-                                    value={category}>
-                                    {category}
+                                    key={category.id}
+                                    value={category.name}>
+                                    {category.name}
                                 </option>
                             )
                         )

@@ -1,36 +1,38 @@
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    margin: 10px auto;
-    background-color: #045d90;
-    font-size: 15px;
-    color: white;
-    max-height: 15vh;
-}
-
-header .title_container {
-    margin-left: 10px;
-}
-
-header .btn_container {
+    height: 10vh;
     display: flex;
-    width: 17vw;
-    margin-right: 10px;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    background-image: url("../../../public/headerbckg.webp");
+    opacity: 0.9;
+}
+header .title_container {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    max-width: 25%;
+    color: white;
+    opacity: 1;
 }
 
-header .btn_container button {
-    border: none;
-    background: #babeba;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 1px 35px;
-    border-radius: 2px;
-    text-decoration: none;
+header .log_container {
+    display: flex;
+    height: 100%;
+    width: 10%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 1;
+}
+
+header .user_container {
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
 }

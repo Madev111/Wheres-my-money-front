@@ -1,9 +1,6 @@
-.main-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.main_container {
+    background-color: rgba(0,0,0, 0.3);
     height: 100vh;
-    background: #777a85;
-
+    width: 100%;
+    padding: 20px;
 }
