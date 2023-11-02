@@ -15,10 +15,6 @@ import {FilterByDate} from "../../components/MoneyHistory/FilterByDate";
 
 export const Container = ()=> {
     return <section className="main_container">
-        {/*<ExpensesForm/>*/}
-        {/*<ExpensesList/>*/}
-        {/*<ExpensesListByCategory/>*/}
-        {/*<ExpensesListByDate/>*/}
         <Routes>
             <Route path="/" element={<HomeView/>}/>
             <Route path="/expenses/search" element={ <ExpensesList/> }/>

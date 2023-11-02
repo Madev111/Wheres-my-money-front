@@ -3,11 +3,13 @@ import { ExpensesEntity } from "types";
 import {ExpensesTable} from "./ExpensesTable";
 import {useParams} from "react-router-dom";
 import {Btn} from "../../common/Btn";
+import {Calc} from "../../common/Calc";
 
 
 export const ExpensesListByCategory = ()=> {
 
     const [expensesList, setExpensesList] = useState<ExpensesEntity[] | null>(null);
+    const [expensesValue, setExpensesValue] = useState<number[] | null>(null);
 
     const {category} = useParams();
 
@@ -20,6 +22,17 @@ export const ExpensesListByCategory = ()=> {
         })();
     }, []);
 
+    useEffect(() => {
+        (async()=> {
+            if(expensesList !== null) {
+                const prices = expensesList.map(expense => expense.price);
+                if(prices.length > 0) {
+                    setExpensesValue(prices);
+                }
+            }
+        })();
+    }, [expensesList]);
+
     if(expensesList === null) {
         return <h1>wait...</h1>
     }
@@ -30,6 +43,7 @@ export const ExpensesListByCategory = ()=> {
         <div>
             <Btn text="Change category" to="/categories/search"/>
             <Btn text="Back to home" to="/"/>
+            {expensesValue === null? <p>Loading...</p> : <Calc values={expensesValue}/>}
         </div>
     </>
 }

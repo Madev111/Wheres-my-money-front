@@ -21,7 +21,6 @@ export const ExpensesForm = ()=> {
         const res = await fetch('http://localhost:3001/categories/search');
         const {categoriesList} = await res.json();
         setCategories(categoriesList);
-        console.log(categoriesList);
     }
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
