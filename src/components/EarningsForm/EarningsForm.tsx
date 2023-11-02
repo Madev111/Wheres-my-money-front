@@ -1,6 +1,9 @@
 import React, {FormEvent, useState} from "react";
 import { EarningsEntity } from "types";
 
+import './EarningsForm.css';
+import {Btn} from "../../common/Btn";
+
 export const EarningsForm = ()=> {
 
     const [form, setForm] = useState<EarningsEntity>({
@@ -27,6 +30,7 @@ export const EarningsForm = ()=> {
     }
     return <>
         <form onSubmit={sendForm} className="earnings_form">
+            <h2>Add your money</h2>
             <label>
                 How much money you got: <br/>
                 <input
@@ -59,5 +63,8 @@ export const EarningsForm = ()=> {
             </label>
             <button type="submit">Spend</button>
         </form>
+        <div>
+            <Btn text="Back to home" to="/"/>
+        </div>
     </>
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { ExpensesEntity } from "types";
 import {ExpensesTable} from "./ExpensesTable";
+import {Btn} from "../../common/Btn";
 
 
 export const ExpensesList = () => {
@@ -25,7 +26,12 @@ export const ExpensesList = () => {
     }
 
     return <>
-        <h2>Expenses</h2>
+        <h2>Your expenses</h2>
         <ExpensesTable expenses={expensesList}/>
+        <div>
+            <Btn text="Filter by category" to="/categories/search"/>
+            <Btn text="Filter by date" to="/dates/expenses"/>
+            <Btn text="Back to home" to="/"/>
+        </div>
     </>
 }

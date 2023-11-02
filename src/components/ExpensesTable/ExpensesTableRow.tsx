@@ -9,7 +9,7 @@ export const ExpensesTableRow = (props: Props)=> {
     return (
         <tr>
             <td>{props.expense.name}</td>
-            <td>{(props.expense.date).toString()}</td>
+            <td>{(new Date(props.expense.date)).toLocaleDateString()}</td>
             <td>{(props.expense.category).toLowerCase()}</td>
             <td>{props.expense.price} PLN</td>
         </tr>

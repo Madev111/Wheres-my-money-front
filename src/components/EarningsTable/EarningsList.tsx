@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { EarningsEntity } from "types";
 import {EarningsTable} from "./EarningsTable";
+import {Btn} from "../../common/Btn";
+import {FilterByDate} from "../MoneyHistory/FilterByDate";
 
 export const EarningsList = ()=> {
 
@@ -22,6 +24,10 @@ export const EarningsList = ()=> {
     return <>
         <h2>Earnings</h2>
         <EarningsTable earnings={earningsList}/>
+        <div>
+            <Btn text="Filter by date" to="/dates/earnings"/>
+            <Btn text="Back to home" to="/"/>
+        </div>
     </>
 
 }

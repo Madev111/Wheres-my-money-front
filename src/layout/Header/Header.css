@@ -5,8 +5,13 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-image: url("../../../public/headerbckg.webp");
-    opacity: 0.9;
+    /*background-image: url("../../../public/headerbckg.webp");*/
+    /*opacity: 1;*/
+    background-color: rgba(0,0,0, 0.9);
+}
+header a {
+    text-decoration: none;
+    color: white;
 }
 header .title_container {
     height: 100%;

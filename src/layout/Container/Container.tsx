@@ -7,9 +7,11 @@ import {Route, Routes} from "react-router-dom";
 import {EarningsList} from "../../components/EarningsTable/EarningsList";
 import {EarningsListByDate} from "../../components/EarningsTable/EarningsListByDate";
 import {EarningsForm} from "../../components/EarningsForm/EarningsForm";
-import {SortExpensesByCategory} from "../../components/MoneyHistory/SortExpensesByCategory";
+import {FilterExpensesByCategory} from "../../components/MoneyHistory/FilterExpensesByCategory";
 
 import './Container.css';
+import {HomeView} from "../HomeView/HomeView";
+import {FilterByDate} from "../../components/MoneyHistory/FilterByDate";
 
 export const Container = ()=> {
     return <section className="main_container">
@@ -18,6 +20,7 @@ export const Container = ()=> {
         {/*<ExpensesListByCategory/>*/}
         {/*<ExpensesListByDate/>*/}
         <Routes>
+            <Route path="/" element={<HomeView/>}/>
             <Route path="/expenses/search" element={ <ExpensesList/> }/>
             <Route path="/expenses/search/:category" element={ <ExpensesListByCategory/> }/>
             <Route path="/expenses/search/:startDate/:endDate" element={ <ExpensesListByDate/> }/>
@@ -25,8 +28,9 @@ export const Container = ()=> {
             <Route path="/earnings/search" element={ <EarningsList/> }/>
             <Route path="/earnings/search/:startDate/:endDate" element={ <EarningsListByDate/> }/>
             <Route path="/earnings" element={ <EarningsForm/> }/>
-            <Route path="/categories/search" element={ <SortExpensesByCategory/> }/>
-
+            <Route path="/categories/search" element={ <FilterExpensesByCategory/> }/>
+            <Route path="/dates/earnings" element={<FilterByDate filter="earnings"/>}/>
+            <Route path="/dates/expenses" element={<FilterByDate filter="expenses"/>}/>
         </Routes>
     </section>
 }

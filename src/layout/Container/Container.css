@@ -1,6 +1,21 @@
 .main_container {
-    background-color: rgba(0,0,0, 0.3);
+    /*background-color: rgba(0,0,0, 0.3);*/
     height: 100vh;
     width: 100%;
-    padding: 20px;
+    background-image: url("../../../public/Classic-money-rain-of-US-dollar-bills-on-black-background-1uyqpc-1920_001.webp");
+}
+
+.main_container table thead h2 {
+
+}
+
+.main_container table {
+    background: white;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.main_container table tbody tr td {
+    padding: 3px;
 }

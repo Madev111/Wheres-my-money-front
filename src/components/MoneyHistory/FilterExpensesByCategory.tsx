@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { CategoryEntity } from "types";
+import {Btn} from "../../common/Btn";
 
-export const SortExpensesByCategory = ()=> {
+export const FilterExpensesByCategory = ()=> {
 
     const [categories, setCategories] = useState<CategoryEntity[]>([]);
 
@@ -16,7 +17,7 @@ export const SortExpensesByCategory = ()=> {
     return <>
         <ul>
             {
-                categories.map(category => <li key={category.id}>{category.name}</li>)
+                categories.map(category => <li key={category.id}><Btn text={category.name} to={`/expenses/search/${category.name}`}/></li>)
             }
         </ul>
     </>

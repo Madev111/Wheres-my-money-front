@@ -4,6 +4,7 @@ import {CategoryEntity, ExpensesEntity} from 'types'
 
 
 import './ExpensesForm.css';
+import {Btn} from "../../common/Btn";
 
 
 export const ExpensesForm = ()=> {
@@ -47,7 +48,9 @@ export const ExpensesForm = ()=> {
 
 
     return <>
+
         <form onSubmit={sendForm} className="expenses_form">
+            <h2>Add your spend</h2>
             <label>
                 Name: <br/>
                 <input
@@ -96,7 +99,10 @@ export const ExpensesForm = ()=> {
                     onChange={e => updateForm('price', e.target.value)}
                 />
             </label>
-            <button type="submit">Spend</button>
+            <Btn text="Add"/>
         </form>
+        <div>
+            <Btn text="Back to home" to="/"/>
+        </div>
     </>
 }

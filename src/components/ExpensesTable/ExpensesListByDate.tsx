@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { ExpensesEntity } from "types";
 import {ExpensesTable} from "./ExpensesTable";
 import {useParams} from "react-router-dom";
+import {Btn} from "../../common/Btn";
 
 
 export const ExpensesListByDate = ()=> {
@@ -26,5 +27,7 @@ export const ExpensesListByDate = ()=> {
     return <>
         <h2>Expenses from {startDate} to {endDate}</h2>
         <ExpensesTable expenses={expensesList}/>
+        <Btn text="Change dates" to="/dates/expenses"/>
+        <Btn text="Back to home" to="/"/>
     </>
 }

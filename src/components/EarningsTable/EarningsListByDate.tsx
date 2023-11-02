@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { EarningsEntity } from "types";
 import {useParams} from "react-router-dom";
 import {EarningsTable} from "./EarningsTable";
+import {Btn} from "../../common/Btn";
 
 export const EarningsListByDate = ()=> {
 
@@ -27,5 +28,7 @@ export const EarningsListByDate = ()=> {
     return <>
         <h2>Earnings from {startDate} to {endDate}</h2>
         <EarningsTable earnings={earningsList}/>
+        <Btn text="Change dates" to="/dates/earnings"/>
+        <Btn text="Back to home" to="/"/>
     </>
 }
