@@ -48,10 +48,10 @@ export const ExpensesForm = ()=> {
 
     return <>
 
-        <form onSubmit={sendForm} className="expenses_form">
-            <h2>Add your spend</h2>
+        <form onSubmit={sendForm} className="add_form">
+            <h2 className="form_title">Add your spend</h2>
             <label>
-                Name: <br/>
+                <p>Name:</p> <br/>
                 <input
                     type="text"
                     name="name"
@@ -62,7 +62,7 @@ export const ExpensesForm = ()=> {
                 />
             </label>
             <label>
-                Date: <br/>
+                <p>Date:</p> <br/>
                 <input
                     type="date"
                     name="date"
@@ -72,7 +72,7 @@ export const ExpensesForm = ()=> {
                 />
             </label>
             <label>
-                Category: <br/>
+                <p>Category:</p> <br/>
                 <select
                     onChange={e => updateForm('category', e.target.value)}>
                     {
@@ -89,7 +89,7 @@ export const ExpensesForm = ()=> {
                 </select>
             </label>
             <label>
-                Price: <br/>
+                <p>Price:</p> <br/>
                 <input
                     type="number"
                     name="price"
@@ -98,10 +98,11 @@ export const ExpensesForm = ()=> {
                     onChange={e => updateForm('price', e.target.value)}
                 />
             </label>
-            <Btn text="Add"/>
+            <div className="btn_div">
+                <button type="submit">Add</button>
+                <Btn text="Back home" to="/"/>
+            </div>
+
         </form>
-        <div>
-            <Btn text="Back to home" to="/"/>
-        </div>
     </>
 }

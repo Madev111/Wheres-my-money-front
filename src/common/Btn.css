@@ -13,6 +13,21 @@ button, .btn {
     transition: 0.25s;
 }
 
-button:hover, .btn:hover {
+
+
+.home_view .home_btn .btn {
+    background: #85760e;
+    display: flex;
+    width: 200px;
+    height: 80px;
+    padding: 3px;
+    text-align: center;
+    line-height: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1em;
+}
+
+button:hover, .btn:hover, .home_view .home_btn .btn:hover {
     background: #524802;
 }

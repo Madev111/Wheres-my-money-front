@@ -40,14 +40,16 @@ export const EarningsListByDate = ()=> {
 
 
 
-    return <>
-        <h2>Earnings from {startDate} to {endDate}</h2>
-        <EarningsTable earnings={earningsList}/>
-        <div>
-            <Btn text="Change dates" to="/dates/earnings"/>
-            <Btn text="Back to home" to="/"/>
-            {earningsValue === null? <p>Loading...</p> : <Calc values={earningsValue}/>}
-        </div>
 
+    return <>
+        <div className="table_container">
+            <h2 className="table_title">Earnings from {startDate} to {endDate}</h2>
+            <EarningsTable earnings={earningsList}/>
+            <div className="btn_div">
+                <Btn text="Change dates" to="/dates/earnings"/>
+                <Btn text="Back to home" to="/"/>
+            </div>
+            {earningsValue === null? <p>Earnings not found.</p> : <Calc values={earningsValue}/>}
+        </div>
     </>
 }

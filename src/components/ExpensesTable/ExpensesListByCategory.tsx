@@ -38,12 +38,14 @@ export const ExpensesListByCategory = ()=> {
     }
 
     return <>
-        <h2>{category} expenses</h2>
-        <ExpensesTable expenses={expensesList}/>
-        <div>
-            <Btn text="Change category" to="/categories/search"/>
-            <Btn text="Back to home" to="/"/>
-            {expensesValue === null? <p>Loading...</p> : <Calc values={expensesValue}/>}
+        <div className="table_container">
+            <h2 className="table_title">{category} expenses</h2>
+            <ExpensesTable expenses={expensesList}/>
+            <div className="btn_div">
+                <Btn text="Change category" to="/categories/search"/>
+                <Btn text="Back to home" to="/"/>
+            </div>
+            {expensesValue === null? <p>Expenses not found.</p> : <Calc values={expensesValue}/>}
         </div>
     </>
 }

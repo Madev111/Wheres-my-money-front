@@ -1,3 +1,50 @@
-.home_view h2 {
+.home_view {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.home_view h1 {
     color: white;
+    font-size: 3em;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px #000000;
+}
+
+.home_view .home_btn {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
+}
+
+.home_view .home_btn .add_btn, .home_view .home_btn .history_btn {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 30%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5%;
+    box-shadow: 1px 1px 7px white;
+    transition: 0.5s;
+}
+
+
+.home_view .home_btn .add_btn h2, .home_view .home_btn .history_btn h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px #c2bdbd;
 }

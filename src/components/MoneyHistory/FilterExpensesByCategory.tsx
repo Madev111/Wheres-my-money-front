@@ -15,10 +15,14 @@ export const FilterExpensesByCategory = ()=> {
     }, []);
 
     return <>
-        <ul>
-            {
-                categories.map(category => <li key={category.id}><Btn text={category.name} to={`/expenses/search/${category.name}`}/></li>)
-            }
-        </ul>
+        <div className="categories">
+            <h2 className="categories_title">Select category</h2>
+            <ul className="category_list">
+                {
+                    categories.map(category => <li key={category.id}><Btn text={category.name} to={`/expenses/search/${category.name}`}/></li>)
+                }
+            </ul>
+            <Btn text="Back home" to="/"/>
+        </div>
     </>
 }

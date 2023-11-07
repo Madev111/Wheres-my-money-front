@@ -38,12 +38,14 @@ export const ExpensesListByDate = ()=> {
     }
 
     return <>
-        <h2>Expenses from {startDate} to {endDate}</h2>
-        <ExpensesTable expenses={expensesList}/>
-        <div>
-            <Btn text="Change dates" to="/dates/expenses"/>
-            <Btn text="Back to home" to="/"/>
-            {expensesValue === null? <p>Loading...</p> : <Calc values={expensesValue}/>}
+        <div className="table_container">
+            <h2 className="table_title">Expenses from {startDate} to {endDate}</h2>
+            <ExpensesTable expenses={expensesList}/>
+            <div className="btn_div">
+                <Btn text="Change dates" to="/dates/expenses"/>
+                <Btn text="Back to home" to="/"/>
+            </div>
+            {expensesValue === null? <p>Expenses not found.</p> : <Calc values={expensesValue}/>}
         </div>
     </>
 }

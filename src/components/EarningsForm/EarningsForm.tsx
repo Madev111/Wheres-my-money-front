@@ -29,10 +29,10 @@ export const EarningsForm = ()=> {
         });
     }
     return <>
-        <form onSubmit={sendForm} className="earnings_form">
-            <h2>Add your money</h2>
+        <form onSubmit={sendForm} className="add_form">
+            <h2 className="form_title">Add your money</h2>
             <label>
-                How much money you got: <br/>
+                <p>How much money you got:</p> <br/>
                 <input
                     type="number"
                     name="price"
@@ -42,7 +42,7 @@ export const EarningsForm = ()=> {
                 />
             </label>
             <label>
-                Date: <br/>
+                <p>Date:</p> <br/>
                 <input
                     type="date"
                     name="date"
@@ -51,7 +51,7 @@ export const EarningsForm = ()=> {
                 />
             </label>
             <label>
-                Where did you get this money: <br/>
+                <p>Where did you get this money:</p> <br/>
                 <input
                     type="text"
                     name="name"
@@ -61,10 +61,10 @@ export const EarningsForm = ()=> {
                     onChange={e => updateForm('source', e.target.value)}
                 />
             </label>
-            <button type="submit">Spend</button>
+            <div className="btn_div">
+                <button type="submit">Spend</button>
+                <Btn text="Back home" to="/"/>
+            </div>
         </form>
-        <div>
-            <Btn text="Back to home" to="/"/>
-        </div>
     </>
 }

@@ -1,21 +1,145 @@
 .main_container {
-    /*background-color: rgba(0,0,0, 0.3);*/
     height: 100vh;
     width: 100%;
     background-image: url("../../../public/Classic-money-rain-of-US-dollar-bills-on-black-background-1uyqpc-1920_001.webp");
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.main_container table thead h2 {
-
+.main_container .table_container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5%;
+    box-shadow: 1px 1px 7px white;
 }
+
+.main_container .add_form, .main_container .dates_filter, .main_container .categories  {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5%;
+    box-shadow: 1px 1px 7px white;
+}
+
+.main_container .add_form label, .main_container .dates_filter .dates_form label {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    line-height: 1.5em;
+    font-weight: bold;
+    font-size: 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_container .add_form label p, .main_container .dates_filter .dates_form label p {
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    font-size: 1.25em;
+}
+
+.main_container .add_form label input, .main_container .add_form label select, .main_container .dates_filter .dates_form label input {
+    flex-grow: 1;
+    display: flex;
+    width: 40%;
+    border: 2px solid black;
+    padding: 3px;
+}
+
+
+.main_container .table_container .table_title, .main_container .add_form .form_title, .main_container .dates_filter .dates_title, .main_container .categories .categories_title {
+    align-self: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.75em;
+}
+
 
 .main_container table {
-    background: white;
-    border: 1px solid black;
     padding: 5px;
     text-align: center;
+    border: 1px solid white;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.main_container table tbody tr:nth-child(2n) {
+    background-color: rgba(203, 203, 182, 0.9);
 }
 
 .main_container table tbody tr td {
     padding: 3px;
+}
+
+.btn_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main_container .table_container p, .main_container .table_container .value_info {
+    align-self: center;
+    color: #ee0202;
+}
+
+.main_container .categories .category_list {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main_container .categories .category_list li .btn {
+    display: block;
+    width: 100%;
+    padding: 1px;
+    background-color: #dabc12;
+    transition: 0.25s;
+}
+
+.main_container .categories .category_list li .btn:hover {
+    background-color: #31312a;
+}
+
+.main_container .categories .category_list li {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+.main_container .dates_filter .dates_form {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main_container .dates_filter .dates_form label input {
+    width: 100%;
+}
+
+.main_container .dates_filter .dates_form .btn {
+    width: 70%;
+    text-align: center;
 }
