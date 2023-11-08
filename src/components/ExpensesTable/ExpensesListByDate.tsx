@@ -13,6 +13,9 @@ export const ExpensesListByDate = ()=> {
 
     const {startDate, endDate} = useParams();
 
+
+
+
     useEffect(() => {
         (async()=> {
             setExpensesList(null);
@@ -37,9 +40,10 @@ export const ExpensesListByDate = ()=> {
         return <h1>wait...</h1>
     }
 
+
     return <>
         <div className="table_container">
-            <h2 className="table_title">Expenses from {startDate} to {endDate}</h2>
+            <h2 className="table_title">{`Expenses from ${startDate} to ${endDate}`}</h2>
             <ExpensesTable expenses={expensesList}/>
             <div className="btn_div">
                 <Btn text="Change dates" to="/dates/expenses"/>

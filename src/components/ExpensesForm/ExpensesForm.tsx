@@ -1,10 +1,9 @@
 import React, {FormEvent, useEffect, useState} from "react";
 import {CategoryEntity, ExpensesEntity} from 'types'
-
-
+import {Btn} from "../../common/Btn";
 
 import './ExpensesForm.css';
-import {Btn} from "../../common/Btn";
+
 
 
 export const ExpensesForm = ()=> {
@@ -16,6 +15,17 @@ export const ExpensesForm = ()=> {
         category: '',
         price: 0,
     });
+    const [resultInfo, setResultInfo] = useState<string | null>(null);
+
+    function ValidateForm() {
+        if(form.name.length === 0) {
+            return <>
+                <h1>Błąd</h1>
+            </>
+        }
+    }
+
+
     const downloadCategories = async ()=> {
 
         const res = await fetch('http://localhost:3001/categories/search');
@@ -31,6 +41,7 @@ export const ExpensesForm = ()=> {
     const sendForm = async (e: FormEvent)=> {
         e.preventDefault();
 
+
         const res = await fetch('http://localhost:3001/expenses', {
             method: 'POST',
             headers: {
@@ -39,11 +50,35 @@ export const ExpensesForm = ()=> {
             body: JSON.stringify(form),
         });
 
+        const data: ExpensesEntity = await res.json();
+
+        setResultInfo(`Added ${data.category} expense of value: ${data.price} PLN.`);
+        setForm({
+            ...form,
+            name: '',
+            price: 0,
+        })
+
     }
 
     useEffect(() => {
         downloadCategories();
     }, []);
+
+
+    if(resultInfo !== null) {
+        return <>
+            <div className="info_result">
+                <h2 className="info_title">{resultInfo}</h2>
+                <div className="btn_div">
+                    <button onClick={()=> setResultInfo(null)}>Add another one</button>
+                    <Btn text="Back home" to="/"/>
+                </div>
+            </div>;
+        </>
+
+    }
+
 
 
     return <>

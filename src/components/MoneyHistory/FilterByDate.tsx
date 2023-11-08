@@ -12,13 +12,17 @@ export const FilterByDate = (props: Props)=> {
     });
 
     const updateDates = (key: string, value: any) => {
-        setDates(form => ({
+        console.log(typeof key, typeof value);
+        setDates(dates => ({
             ...dates,
             [key]: value,
+
         }))};
 
     const sendForm = async (e: FormEvent)=> {
         e.preventDefault();
+
+
 
 
     }
@@ -48,7 +52,10 @@ export const FilterByDate = (props: Props)=> {
                         onChange={e => updateDates('endDate', e.target.value)}
                     />
                 </label>
-                <Btn text="Search" to={`/${props.filter}/search/${dates.startDate}/${dates.endDate}`}/>
+                {
+                    (dates.startDate === null) || (dates.endDate === null) ? <div className="incorrect_dates">Please select date range</div> : <Btn text="Search" to={`/${props.filter}/search/${dates.startDate}/${dates.endDate}`}/>
+                }
+
             </form>
             <Btn text="Back home" to="/"/>
         </div>

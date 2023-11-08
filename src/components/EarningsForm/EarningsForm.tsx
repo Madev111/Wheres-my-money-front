@@ -1,4 +1,4 @@
-import React, {FormEvent, useState} from "react";
+import React, {FormEvent, useEffect, useState} from "react";
 import { EarningsEntity } from "types";
 
 import './EarningsForm.css';
@@ -11,6 +11,7 @@ export const EarningsForm = ()=> {
         date: new Date(),
         source: '',
     });
+    const [resultInfo, setResultInfo] = useState<string | null>(null);
 
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
@@ -27,7 +28,27 @@ export const EarningsForm = ()=> {
             },
             body: JSON.stringify(form),
         });
+        const data: EarningsEntity = await res.json();
+
+        setResultInfo(`Added earning of value: ${data.value} PLN.`);
+        setForm({
+            ...form,
+            value: 0,
+            source: '',
+        })
     }
+
+
+    if(resultInfo !== null) {
+        return <div className="info_result">
+            <h2 className="info_title">{resultInfo}</h2>
+            <div className="btn_div">
+                <button onClick={()=> setResultInfo(null)}>Add another one</button>
+                <Btn text="Back home" to="/"/>
+            </div>
+        </div>;
+    }
+
     return <>
         <form onSubmit={sendForm} className="add_form">
             <h2 className="form_title">Add your money</h2>
@@ -62,7 +83,7 @@ export const EarningsForm = ()=> {
                 />
             </label>
             <div className="btn_div">
-                <button type="submit">Spend</button>
+                <button type="submit">Add</button>
                 <Btn text="Back home" to="/"/>
             </div>
         </form>
