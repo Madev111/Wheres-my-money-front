@@ -12,7 +12,6 @@ export const FilterByDate = (props: Props)=> {
     });
 
     const updateDates = (key: string, value: any) => {
-        console.log(typeof key, typeof value);
         setDates(dates => ({
             ...dates,
             [key]: value,

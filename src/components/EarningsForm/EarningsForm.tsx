@@ -84,7 +84,11 @@ export const EarningsForm = ()=> {
                 />
             </label>
             <div className="btn_div">
-                <button type="submit">Add</button>
+                {
+                    (form.value <= 0 || form.date === undefined || form.source === undefined) ?
+                        <Btn text="Add" to="#"/>
+                        : <button type="submit">Add</button>
+                }
                 <Btn text="Back home" to="/"/>
             </div>
         </form>

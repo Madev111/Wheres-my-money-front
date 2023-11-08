@@ -49,7 +49,7 @@ export const ExpensesForm = ()=> {
         setForm({
             ...form,
             name: '',
-            price: 0,
+            category: '',
         })
 
     }
@@ -102,6 +102,7 @@ export const ExpensesForm = ()=> {
             <label>
                 <p>Category:</p> <br/>
                 <select
+                    required
                     onChange={e => updateForm('category', e.target.value)}>
                     {
                         categories.map(
@@ -121,13 +122,16 @@ export const ExpensesForm = ()=> {
                 <input
                     type="number"
                     name="price"
-                    aria-required={true}
-                    value={form.price}
+                    required
                     onChange={e => updateForm('price', e.target.value)}
                 />
             </label>
             <div className="btn_div">
-                <button type="submit">Add</button>
+                {
+                    (form.price <= 0 || form.date === undefined || form.category === undefined || form.name === undefined) ?
+                        <Btn text="Add" to="#"/>
+                        : <button type="submit">Add</button>
+                }
                 <Btn text="Back home" to="/"/>
             </div>
 

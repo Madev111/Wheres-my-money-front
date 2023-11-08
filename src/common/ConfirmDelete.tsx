@@ -20,11 +20,11 @@ export const ConfirmDelete = ()=> {
         });
 
 
-        if([400,500].includes(res.status)) {
-            const error = await res.json();
-            alert(`Error occurred: ${error.message} `)
-            return
-        }
+        // if([400,500].includes(res.status)) {
+        //     const error = await res.json();
+        //     alert(`Error occurred: ${error.message} `)
+        //     return
+        // }
 
     }
 
@@ -32,7 +32,7 @@ export const ConfirmDelete = ()=> {
         <div className="confirm_delete">
             <h1 className="confirm_title">Are you sure you want to delete this {data.value ? data.value : data.price} PLN entry from {(new Date(data.date)).toLocaleDateString()}?</h1>
             <div className="btn_div">
-                <button className="btn" onClick={deleteData}><Link to="/delete/success">Delete</Link></button>
+                <button className="btn" onClick={deleteData}><Link style={{width: "100%", height: "100%"}} to="/delete/success">Delete</Link></button>
                 <Btn text="Back to home" to="/"/>
             </div>
 
