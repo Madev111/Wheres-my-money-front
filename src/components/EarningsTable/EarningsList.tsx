@@ -11,7 +11,7 @@ export const EarningsList = ()=> {
 
     useEffect(() => {
         (async ()=> {
-            const res = await fetch('http://localhost:3001/earnings/search');
+            const res = await fetch('http://localhost:3001/earnings');
             const {earningsList} = await res.json();
             setEarningsList(earningsList);
         })();

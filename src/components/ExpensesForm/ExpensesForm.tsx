@@ -17,13 +17,6 @@ export const ExpensesForm = ()=> {
     });
     const [resultInfo, setResultInfo] = useState<string | null>(null);
 
-    function ValidateForm() {
-        if(form.name.length === 0) {
-            return <>
-                <h1>Błąd</h1>
-            </>
-        }
-    }
 
 
     const downloadCategories = async ()=> {
@@ -128,7 +121,7 @@ export const ExpensesForm = ()=> {
                 <input
                     type="number"
                     name="price"
-                    required
+                    aria-required={true}
                     value={form.price}
                     onChange={e => updateForm('price', e.target.value)}
                 />

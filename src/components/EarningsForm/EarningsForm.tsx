@@ -1,12 +1,13 @@
-import React, {FormEvent, useEffect, useState} from "react";
+import React, {FormEvent, useState} from "react";
 import { EarningsEntity } from "types";
+import {Btn} from "../../common/Btn";
 
 import './EarningsForm.css';
-import {Btn} from "../../common/Btn";
 
 export const EarningsForm = ()=> {
 
     const [form, setForm] = useState<EarningsEntity>({
+        id: '',
         value: 0,
         date: new Date(),
         source: '',

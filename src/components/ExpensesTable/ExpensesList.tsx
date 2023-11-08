@@ -14,7 +14,7 @@ export const ExpensesList = () => {
 
     useEffect(() => {
         (async()=> {
-            const res = await fetch('http://localhost:3001/expenses/search');
+            const res = await fetch('http://localhost:3001/expenses');
             const {expensesList} = await res.json();
             setExpensesList(expensesList);
         })();

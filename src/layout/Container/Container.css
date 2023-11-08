@@ -23,7 +23,7 @@
     box-shadow: 1px 1px 7px white;
 }
 
-.main_container .add_form, .main_container .dates_filter, .main_container .categories, .main_container .info_result, .main_container .not_found {
+.main_container .add_form, .main_container .dates_filter, .main_container .categories, .main_container .info_result, .main_container .not_found, .main_container .confirm_delete, .main_container .deleted_success {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -64,11 +64,23 @@
 }
 
 
-.main_container .table_container .table_title, .main_container .add_form .form_title, .main_container .dates_filter .dates_title, .main_container .categories .categories_title {
+.main_container .table_container .table_title, .main_container .add_form .form_title, .main_container .dates_filter .dates_title, .main_container .categories .categories_title, .main_container .deleted_success .deleted_title, .main_container .confirm_delete .confirm_title, .main_container .info_result .info_title {
     align-self: center;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.75em;
+    text-align: center;
+    margin: 1px;
+}
+
+.main_container .deleted_success .deleted_title, .main_container .info_result .info_title {
+    font-size: 2em;
+    color: #05a405;
+}
+
+.main_container .confirm_delete .confirm_title {
+    font-size: 2em;
+    color: #ee0202;
 }
 
 
@@ -147,24 +159,37 @@
 }
 
 
-.main_container .info_result .info_title {
-    align-self: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.5em
-}
-.main_container .info_result .btn_div {
+/*.main_container .info_result .info_title {*/
+/*    align-self: center;*/
+/*    font-weight: bold;*/
+/*    text-transform: uppercase;*/
+/*    font-size: 1.5em*/
+/*}*/
+.main_container .info_result .btn_div, .main_container .confirm_delete .btn_div {
     display: flex;
     width: 70%;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.main_container .info_result .btn_div button {
+.main_container .info_result .btn_div button, .main_container .confirm_delete .btn_div button {
     cursor: pointer;
+}
+.main_container .confirm_delete .btn_div button a {
+    text-decoration: none;
+    color: #ffffff;
+
 }
 
 .main_container .not_found h1 {
     font-size: 3em;
-    color: red;
+    color: #ee0202;
+}
+
+.delete_link {
+    color: #2a2a2a;
+    transition: 0.25s;
+}
+.delete_link:hover {
+    color: #ee0202;
 }

@@ -13,6 +13,8 @@ import './Container.css';
 import {HomeView} from "../HomeView/HomeView";
 import {FilterByDate} from "../../components/MoneyHistory/FilterByDate";
 import {NotFound} from "../NotFound/NotFound";
+import {ConfirmDelete} from "../../common/ConfirmDelete";
+import {DeletedSuccess} from "../DeletedSuccess/DeletedSuccess";
 
 export const Container = ()=> {
     return <section className="main_container">
@@ -28,6 +30,8 @@ export const Container = ()=> {
             <Route path="/categories/search" element={ <FilterExpensesByCategory/> }/>
             <Route path="/dates/earnings" element={<FilterByDate filter="earnings"/>}/>
             <Route path="/dates/expenses" element={<FilterByDate filter="expenses"/>}/>
+            <Route path="/delete" element={<ConfirmDelete/>}/>
+            <Route path="/delete/success" element={<DeletedSuccess/>}/>
             <Route path="*" element={ <NotFound/>}/>
         </Routes>
     </section>
