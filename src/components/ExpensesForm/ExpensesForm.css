@@ -1,0 +1,7 @@
+
+.add_form .btn_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+}

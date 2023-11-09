@@ -1,0 +1,43 @@
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*background-image: url("../../../public/headerbckg.webp");*/
+    /*opacity: 1;*/
+    background-color: rgba(0,0,0, 0.9);
+}
+header a {
+    text-decoration: none;
+    color: white;
+}
+header .title_container {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    max-width: 25%;
+    color: white;
+    opacity: 1;
+}
+
+header .log_container {
+    display: flex;
+    height: 100%;
+    width: 10%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 1;
+}
+
+header .user_container {
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
+}
