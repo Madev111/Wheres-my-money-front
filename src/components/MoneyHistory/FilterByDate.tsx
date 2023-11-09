@@ -21,12 +21,7 @@ export const FilterByDate = (props: Props)=> {
     const sendForm = async (e: FormEvent)=> {
         e.preventDefault();
 
-
-
-
     }
-
-
 
     return <>
         <div className="dates_filter">
